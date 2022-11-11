@@ -4,7 +4,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     messaging \
     ThemePicker \
-#   GameSpace \
+    GameSpace \
     RavenWalls \
     OmniJaws
 
@@ -12,11 +12,9 @@ PRODUCT_PACKAGES += \
 include vendor/themes/common.mk
 
 # Charger mode images
-ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
 PRODUCT_PACKAGES += \
     charger_res_images \
     product_charger_res_images
-endif
 
 # Charger mode images
 ifeq ($(USE_PHOTON_CAM),true)
@@ -48,8 +46,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     QuickAccessWallet
 
-ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
 PRODUCT_PACKAGES += \
     RavenDesk \
     CorvusZen
-endif
