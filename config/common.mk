@@ -36,12 +36,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
 
 # Gapps
-ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)
-
 PRODUCT_COPY_FILES += \
 $(call find-copy-subdir-files,*,vendor/corvus/prebuilt/product/usr/,$(TARGET_COPY_OUT_PRODUCT)/usr)
-endif
 
 # StorageManager configuration
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -141,7 +138,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.sip.voip.xml
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
 PRODUCT_PACKAGES += \
     FaceUnlockService
@@ -149,7 +145,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
-endif
 
 # Flatten APEXs for performance
 OVERRIDE_TARGET_FLATTEN_APEX := true
