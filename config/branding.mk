@@ -3,8 +3,8 @@ RAVEN_LAIR := Unofficial
 CORVUS_VERSION_BASE := T5.0
 CORVUS_CODENAME := El-Dorado
 
-ifneq ($(filter Trishiraj victor10520 KSSRAO ManavjitSingh MAdMiZ Fosslover Meghthedev PAiN Roxor-007 H3M3L AnhTran Sukeerat EinarG Ankan005 Ajit YadavMohit19 Ritzzz TheSanty CoolDude6942 SpectreDev,$(CORVUS_MAINTAINER)),)
-RAVEN_LAIR := Official
+ifneq ($(filter Trishiraj victor10520 Anant_Goel KSSRAO ManavjitSingh MAdMiZ Fosslover Meghthedev PAiN Roxor-007 H3M3L AnhTran Sukeerat EinarG Ankan005 Ajit YadavMohit19 Ritzzz TheSanty CoolDude6942 SpectreDev,$(CORVUS_MAINTAINER)),)
+RAVEN_LAIR := Unofficial
 endif
 
 # Set all versions
