@@ -37,6 +37,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Gapps
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)
+
 PRODUCT_COPY_FILES += \
 $(call find-copy-subdir-files,*,vendor/corvus/prebuilt/product/usr/,$(TARGET_COPY_OUT_PRODUCT)/usr)
 
@@ -138,7 +139,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.sip.voip.xml
 
 # Face Unlock
-ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
+TARGET_FACE_UNLOCK_SUPPORTED ?= true
 PRODUCT_PACKAGES += \
     FaceUnlockService
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
